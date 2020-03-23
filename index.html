@@ -5,6 +5,7 @@
   </head>
   <body>
     <h1>how many nut can u nut</h1>
+    <p>Nut count: <span id="nut_counter"></span></p>
     <button onclick="nut()">
       NUT
     </button>
@@ -30,16 +31,23 @@
   
   
 <script>
-    function nut() {
-      var nutbag = document.getElementById("nutbag");
-      
-      // make a new img element
-      var nut = document.createElement("img");
-      nut.src = "./pictures/nutpicture.png";
-      
-      // put img inside the div
-      nutbag.appendChild(nut);
-    }
-  </script>
+  // this keeps track of how many nuts we have
+  var nut_count;
+  nut_count = 0;
+
+  function nut() {
+    var nutbag = document.getElementById("nutbag");
+    
+    // make a new img element
+    var nut = document.createElement("img");
+    nut.src = "./pictures/nutpicture.png";
+    
+    // put img inside the div
+    nutbag.appendChild(nut);
+
+    // update the counter
+    nut_count = nut_count + 1;
+  }
+</script>
   
 </html>
