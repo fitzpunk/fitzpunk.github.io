@@ -39,14 +39,20 @@
     var nutbag = document.getElementById("nutbag");
     
     // make a new img element
+        nut_count = nut_count + 1;
     var nut = document.createElement("img");
     nut.src = "./pictures/nutpicture.png";
     
+    if (nut_count % 15 == 0) {
+    nut.src = "./pictures/pistachio.jpg";
+    } else {
+    nut.src = "./pictures/nutpicture.png";
+    }
+
     // put img inside the div
     nutbag.appendChild(nut);
 
     // update the counter
-    nut_count = nut_count + 1;
     var counter = document.getElementById("nut_counter");
     counter.textContent = nut_count;
   }
