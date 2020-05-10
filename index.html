@@ -12,9 +12,12 @@
     
     <div id="nutbag"></div>
     
+    <p id="epilepsy-warning" style="display: none">
+      click the angery pistach, but not if you have photosensitive epilepsy :(
+    </p>
   </body>
   
-  
+ 
   <style>
     
     #nutbag {
@@ -73,6 +76,7 @@
     if (nut_count % 15 == 0) {
     nut.src = "./pictures/pistachio.png";
     nut.onclick = start_rainbow;
+    document.getElementById("epilepsy-warning").style.display = "block";
     } else {
     nut.src = "./pictures/nutpicture.png";
       
