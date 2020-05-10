@@ -16,6 +16,11 @@
   
   
   <style>
+    
+    #nutbag {
+      padding: 32px;
+    }
+    
     p {
       color: #4f216e;
     }
@@ -27,6 +32,24 @@
     button {
       margin-bottom: 16px;
     }
+    
+    @keyframes rainbow-anim {
+      0% { background-color: red; }
+      15% { background-color: orange; }
+      30% { background-color: yellow; }
+      45% { background-color: green; }
+      60% { background-color: blue; }
+      75% { background-color: indigo; }
+      90% { background-color: violet; }
+      100% { background-color: red; }
+    }
+    
+    .rainbow {
+      animation-name: rainbow-anim;
+      animation-duration: 0.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
   </style>
   
   
@@ -34,6 +57,10 @@
   // this keeps track of how many nuts we have
   var nut_count;
   nut_count = 0;
+  
+  function start_rainbow() {
+    document.getElementById("nutbag").classList = ["rainbow"];
+  }
 
   function nut() {
     var nutbag = document.getElementById("nutbag");
@@ -45,8 +72,10 @@
     
     if (nut_count % 15 == 0) {
     nut.src = "./pictures/pistachio.png";
+    nut.onclick = start_rainbow;
     } else {
     nut.src = "./pictures/nutpicture.png";
+      
     }
 
     // put img inside the div
